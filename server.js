@@ -8,7 +8,7 @@ var fetch = require('isomorphic-fetch');
 
 var app = express();
 app.use(require('express-json-promise')());
-var db = require('./db');
+// var db = require('./db');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,22 +32,22 @@ app.get('/', function ( req, res ) {
 
   res.json(data);
 });
+//
+// app.get('/artists', artistsController.all);
+//
+// app.get('/artists/:id', artistsController.findById);
+//
+// app.post('/artists', artistsController.create);
+//
+// app.put('/artists/:id', artistsController.update);
+//
+// app.delete('/artists/:id', artistsController.delete);
 
-app.get('/artists', artistsController.all);
-
-app.get('/artists/:id', artistsController.findById);
-
-app.post('/artists', artistsController.create);
-
-app.put('/artists/:id', artistsController.update);
-
-app.delete('/artists/:id', artistsController.delete);
-
-db.connect('mongodb://localhost:27017/node-api', function ( err ) {
-  if ( err ) {
-    return console.log('Connection refused :(');
-  }
-  app.listen(3000, function () {
-    console.log('Api start listening on port: 3000');
-  });
-});
+// db.connect('mongodb://localhost:27017/node-api', function ( err ) {
+//   if ( err ) {
+//     return console.log('Connection refused :(');
+//   }
+//   app.listen(3000, function () {
+//     console.log('Api start listening on port: 3000');
+//   });
+// });
